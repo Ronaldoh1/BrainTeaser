@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503C5BA72DF0EB1633F4A564 /* libPods-BrainTeaser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AE071A5E749BB532B7D8B5 /* libPods-BrainTeaser.a */; };
 		FBCC92821DB46697002B8EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCC92811DB46697002B8EE8 /* AppDelegate.swift */; };
 		FBCC92841DB46697002B8EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCC92831DB46697002B8EE8 /* ViewController.swift */; };
 		FBCC92871DB46697002B8EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBCC92851DB46697002B8EE8 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17BF14F079A9994542547006 /* Pods-BrainTeaser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainTeaser.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrainTeaser/Pods-BrainTeaser.release.xcconfig"; sourceTree = "<group>"; };
+		49AE071A5E749BB532B7D8B5 /* libPods-BrainTeaser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BrainTeaser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7AA5241B7C82CA50314789F /* Pods-BrainTeaser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrainTeaser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrainTeaser/Pods-BrainTeaser.debug.xcconfig"; sourceTree = "<group>"; };
 		FBCC927E1DB46697002B8EE8 /* BrainTeaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainTeaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBCC92811DB46697002B8EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBCC92831DB46697002B8EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503C5BA72DF0EB1633F4A564 /* libPods-BrainTeaser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E6300138C7C15758FB02BD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7AA5241B7C82CA50314789F /* Pods-BrainTeaser.debug.xcconfig */,
+				17BF14F079A9994542547006 /* Pods-BrainTeaser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F53E151EED58EB55BC81A0A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49AE071A5E749BB532B7D8B5 /* libPods-BrainTeaser.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FBCC92751DB46697002B8EE8 = {
 			isa = PBXGroup;
 			children = (
 				FBCC92801DB46697002B8EE8 /* BrainTeaser */,
 				FBCC927F1DB46697002B8EE8 /* Products */,
+				1E6300138C7C15758FB02BD8 /* Pods */,
+				F53E151EED58EB55BC81A0A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBCC92901DB46697002B8EE8 /* Build configuration list for PBXNativeTarget "BrainTeaser" */;
 			buildPhases = (
+				E269033F7070ABCD1B9E5877 /* [CP] Check Pods Manifest.lock */,
 				FBCC927A1DB46697002B8EE8 /* Sources */,
 				FBCC927B1DB46697002B8EE8 /* Frameworks */,
 				FBCC927C1DB46697002B8EE8 /* Resources */,
+				9D8E774459A2C276234FD308 /* [CP] Embed Pods Frameworks */,
+				34A6EFCB3E9DCAB7A0CC5C74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34A6EFCB3E9DCAB7A0CC5C74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrainTeaser/Pods-BrainTeaser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D8E774459A2C276234FD308 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrainTeaser/Pods-BrainTeaser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E269033F7070ABCD1B9E5877 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBCC927A1DB46697002B8EE8 /* Sources */ = {
@@ -249,6 +324,7 @@
 		};
 		FBCC92911DB46697002B8EE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7AA5241B7C82CA50314789F /* Pods-BrainTeaser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BrainTeaser/Info.plist;
@@ -260,6 +336,7 @@
 		};
 		FBCC92921DB46697002B8EE8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17BF14F079A9994542547006 /* Pods-BrainTeaser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BrainTeaser/Info.plist;
@@ -288,6 +365,7 @@
 				FBCC92921DB46697002B8EE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

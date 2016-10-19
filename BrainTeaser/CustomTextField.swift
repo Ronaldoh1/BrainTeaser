@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 @IBDesignable
 class CustomTextField: UITextField {
@@ -18,6 +19,7 @@ class CustomTextField: UITextField {
           setupView()
         }
     }
+    
     //set the rectangle when the text is not being edited
     override func textRectForBounds(bounds: CGRect) -> CGRect {
       return CGRectInset(bounds, inset, inset)
@@ -34,9 +36,8 @@ class CustomTextField: UITextField {
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupView()
     }
-    
+   
     func setupView() {
         self.layer.cornerRadius = cornerRadius
     }

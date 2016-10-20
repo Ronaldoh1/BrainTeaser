@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--LoginVC-->
@@ -29,7 +28,8 @@
                                 <rect key="frame" x="76" y="279" width="223" height="40"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="mQ6-2x-afB"/>
+                                    <constraint firstAttribute="height" constant="40" id="NIN-Fj-Lsl"/>
+                                    <constraint firstAttribute="width" constant="223" id="fDh-WY-9bA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -37,6 +37,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-Ry-opf" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
                                 <rect key="frame" x="76" y="343" width="223" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="3FV-k2-jVo"/>
+                                    <constraint firstAttribute="height" constant="30" id="Y45-Wy-kAU"/>
+                                </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,6 +50,7 @@
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="7Pd-2X-lv5"/>
+                                    <constraint firstAttribute="width" constant="223" id="upu-di-hwU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -53,20 +58,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VOF-Ry-opf" firstAttribute="trailing" secondItem="GMe-PO-Eze" secondAttribute="trailing" id="4mL-1L-DNj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="tMR-we-TVS" secondAttribute="trailing" constant="60" id="L2g-dP-vS0"/>
+                            <constraint firstItem="VOF-Ry-opf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7VG-Mc-m0G"/>
                             <constraint firstItem="GMe-PO-Eze" firstAttribute="trailing" secondItem="tMR-we-TVS" secondAttribute="trailing" id="OLZ-wH-abd"/>
                             <constraint firstItem="GMe-PO-Eze" firstAttribute="top" secondItem="tMR-we-TVS" secondAttribute="bottom" constant="8" id="PMH-Qy-Lha"/>
                             <constraint firstItem="tMR-we-TVS" firstAttribute="top" secondItem="kye-pL-JA6" secondAttribute="bottom" constant="24" id="PNw-9P-Adb"/>
+                            <constraint firstItem="GMe-PO-Eze" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ugz-KS-aMf"/>
                             <constraint firstItem="kye-pL-JA6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="bty-1T-baK"/>
-                            <constraint firstItem="VOF-Ry-opf" firstAttribute="leading" secondItem="GMe-PO-Eze" secondAttribute="leading" id="cG8-3S-loy"/>
-                            <constraint firstItem="tMR-we-TVS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="dL7-eP-KPh"/>
                             <constraint firstItem="kye-pL-JA6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fFa-R8-qZm"/>
                             <constraint firstItem="VOF-Ry-opf" firstAttribute="top" secondItem="GMe-PO-Eze" secondAttribute="bottom" constant="24" id="r4B-Wx-cfo"/>
+                            <constraint firstItem="tMR-we-TVS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="shz-sK-NU7"/>
                             <constraint firstItem="GMe-PO-Eze" firstAttribute="leading" secondItem="tMR-we-TVS" secondAttribute="leading" id="vxY-GU-AG5"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailConstraint" destination="shz-sK-NU7" id="ObU-FG-Zs0"/>
+                        <outlet property="loginButtonConstraint" destination="7VG-Mc-m0G" id="AD1-jE-Czo"/>
+                        <outlet property="passwordConstraint" destination="Ugz-KS-aMf" id="FMk-JP-yvy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

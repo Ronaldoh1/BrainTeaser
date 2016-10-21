@@ -7,29 +7,57 @@
 //
 
 import UIKit
+import pop
 
 class GameVC: UIViewController {
 
+    @IBOutlet weak var yesButton: CustomButton!
+    
+    @IBOutlet weak var noButton: CustomButton!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    var currentCard: CardView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        currentCard = NSBundle.mainBundle().loadNibNamed("CardView", owner: self, options: nil)[0] as? CardView
+        
+        currentCard.center = AnimationEngine.screenCenterPosition
+        self.view.addSubview(currentCard)
+        
+       
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(animated: Bool) {
+         AnimationEngine.animateToPosition(currentCard, position: CGPointMake(200,200))
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func yesButtonTapped(sender: CustomButton) {
+        
+        if sender.titleLabel!.text == "YES" {
+            checkAnswer()
+            showNextCard()
+        } else {
+            titleLabel.text = "Does this card match the previous"
+        }
     }
-    */
-
+    
+    @IBAction func noButtonTapped(sender: CustomButton) {
+        checkAnswer()
+        showNextCard()
+    }
+    
+    func showNextCard() {
+        if let current = currentCard {
+            let cardToRemove = current
+            currentCard = nil 
+        }
+        
+    }
+    
+    func checkAnswer() {
+        
+    }
 }

@@ -28,7 +28,5 @@ class LoginVC: UIViewController {
         self.animationEngine.animateOnScreen(1)
     }
   
-
-
 }
 

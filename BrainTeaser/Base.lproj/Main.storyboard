@@ -34,17 +34,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-Ry-opf" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
-                                <rect key="frame" x="76" y="343" width="223" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="223" id="3FV-k2-jVo"/>
-                                    <constraint firstAttribute="height" constant="30" id="Y45-Wy-kAU"/>
-                                </constraints>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tMR-we-TVS" customClass="CustomTextField" customModule="BrainTeaser" customModuleProvider="target">
                                 <rect key="frame" x="76" y="231" width="223" height="40"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,6 +44,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-Ry-opf" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <rect key="frame" x="76" y="343" width="223" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.4549019608" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="3FV-k2-jVo"/>
+                                    <constraint firstAttribute="height" constant="30" id="Y45-Wy-kAU"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pI3-V3-Oon" kind="show" id="HcO-Bh-Dwp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -75,7 +78,6 @@
                         <outlet property="emailConstraint" destination="shz-sK-NU7" id="ObU-FG-Zs0"/>
                         <outlet property="loginButtonConstraint" destination="7VG-Mc-m0G" id="AD1-jE-Czo"/>
                         <outlet property="passwordConstraint" destination="Ugz-KS-aMf" id="FMk-JP-yvy"/>
-                        <segue destination="pI3-V3-Oon" kind="show" identifier="gameVC" id="ShV-QP-1M1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,9 +103,12 @@
                                     <constraint firstAttribute="height" constant="30" id="4en-jY-Sgz"/>
                                     <constraint firstAttribute="width" constant="150" id="eHc-W0-wvx"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="yesButtonTapped:" destination="pI3-V3-Oon" eventType="touchUpInside" id="YHz-n4-ux1"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sx-n1-AmQ" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
                                 <rect key="frame" x="20" y="617" width="150" height="30"/>
@@ -115,6 +120,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="noButtonTapped:" destination="pI3-V3-Oon" eventType="touchUpInside" id="a7b-mz-6UU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember this image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPX-ch-2dw">
                                 <rect key="frame" x="58.5" y="85" width="258.5" height="29"/>
@@ -122,13 +130,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ARI-5B-kkw">
-                                <rect key="frame" x="75" y="221" width="225" height="225"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="Dt8-1j-5rR"/>
-                                    <constraint firstAttribute="height" constant="225" id="Jnc-mu-niS"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,13 +137,16 @@
                             <constraint firstItem="GgU-o1-5wQ" firstAttribute="top" secondItem="0sx-n1-AmQ" secondAttribute="bottom" constant="20" id="RuZ-Mr-CBG"/>
                             <constraint firstItem="LPX-ch-2dw" firstAttribute="top" secondItem="4AS-AI-dUZ" secondAttribute="bottom" constant="65" id="bit-nz-oKH"/>
                             <constraint firstItem="GgU-o1-5wQ" firstAttribute="top" secondItem="mGd-ru-W2d" secondAttribute="bottom" constant="20" id="fsz-rT-1Lq"/>
-                            <constraint firstItem="ARI-5B-kkw" firstAttribute="centerY" secondItem="phr-Kt-k1z" secondAttribute="centerY" id="iCU-9H-alL"/>
                             <constraint firstAttribute="trailing" secondItem="mGd-ru-W2d" secondAttribute="trailing" constant="20" id="iqc-Cp-Qwe"/>
-                            <constraint firstItem="ARI-5B-kkw" firstAttribute="centerX" secondItem="phr-Kt-k1z" secondAttribute="centerX" id="ktq-wW-31I"/>
                             <constraint firstItem="LPX-ch-2dw" firstAttribute="centerX" secondItem="phr-Kt-k1z" secondAttribute="centerX" id="tYl-jg-bRK"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="noButton" destination="0sx-n1-AmQ" id="Hw7-yj-SLh"/>
+                        <outlet property="titleLabel" destination="LPX-ch-2dw" id="DeP-cI-Qwu"/>
+                        <outlet property="yesButton" destination="mGd-ru-W2d" id="zvw-6a-7pL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qo2-kq-8DT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

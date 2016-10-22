@@ -22,18 +22,11 @@ class GameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        currentCard = NSBundle.mainBundle().loadNibNamed("CardView", owner: self, options: nil)[0] as? CardView
-        
+        currentCard = createCardFromNib()
         currentCard.center = AnimationEngine.screenCenterPosition
         self.view.addSubview(currentCard)
-        
-       
-        
     }
-    override func viewDidAppear(animated: Bool) {
-         AnimationEngine.animateToPosition(currentCard, position: CGPointMake(200,200))
-    }
-    
+ 
     @IBAction func yesButtonTapped(sender: CustomButton) {
         
         if sender.titleLabel!.text == "YES" {
@@ -52,9 +45,33 @@ class GameVC: UIViewController {
     func showNextCard() {
         if let current = currentCard {
             let cardToRemove = current
-            currentCard = nil 
+            currentCard = nil
+            
+            AnimationEngine.animateToPosition(cardToRemove, position: AnimationEngine.offScreenLeftPoint, completion: { (animation, finished) in
+                cardToRemove.removeFromSuperview()
+            })
+            
+            if let next = createCardFromNib() {
+                next.center = AnimationEngine.offScreenRightPosition
+                self.view.addSubview(next)
+                currentCard = next
+                
+                if noButton.hidden {
+                    noButton.hidden = false
+                    yesButton.setTitle("YES", forState: .Normal)
+                }
+                
+                AnimationEngine.animateToPosition(next, position: AnimationEngine.screenCenterPosition, completion: { (animation, finished) in
+                    
+                })
+            }
         }
         
+    }
+    
+    func createCardFromNib() -> CardView! {
+        
+      return NSBundle.mainBundle().loadNibNamed("CardView", owner: self, options: nil)[0] as! CardView
     }
     
     func checkAnswer() {
